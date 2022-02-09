@@ -9,6 +9,7 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
+import { NativeBaseProvider } from "native-base";
 
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
@@ -31,7 +32,7 @@ const App = () => {
   const scrollViewRef = useRef<null | ScrollView>(null);
 
   return (
-    <>
+    <NativeBaseProvider>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -354,7 +355,7 @@ const App = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </NativeBaseProvider>
   );
 };
 const styles = StyleSheet.create({
